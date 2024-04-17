@@ -98,6 +98,7 @@ int main(int argc, char const *argv[])
 	//ft_memset(array2, 'c', 7);
 	//printf("%s, %s", (char *)memset(array, 'b', 5), (char*)ft_memset(array2, 'c', 5));
 
-	test_strlcat();
+	//test_strlcat();
+	printf("%c  %c", ft_toupper('7'), ft_tolower('7'));
 	return 0;
 }

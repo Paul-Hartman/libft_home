@@ -2,6 +2,8 @@
 #include "libft.h"
 #include <stdio.h>
 
+ //cc -Wall -o test_program tester.c -L. -lft
+
 void test_bzero(void)
 {
 	char buf[10];
@@ -21,6 +23,27 @@ void test_bzero(void)
 	printf("Test passed");
 }
 
+void test_memmove(void)
+{
+	char buf[20] = "Hello, World!";
+
+	char *src = buf + 2;
+	char *dest =buf + 7;
+	
+	printf("%s \n", (char *)ft_memmove(dest, src, 5));
+	printf("%s", (char *)memmove(dest, src, 5));
+}
+
+void test_memcpy(void)
+{
+	
+	char src[] = "source string";
+	char dest[] = "destination";
+	
+	printf("%s \n", (char *)ft_memcpy(dest, src, sizeof(dest)));
+	printf("%s \n", (char *)memcpy(dest, src, sizeof(dest)));
+}
+
 int main(int argc, char const *argv[])
 {
 	//printf("%d", ft_isalnum('3')); 
@@ -36,6 +59,6 @@ int main(int argc, char const *argv[])
 	//ft_memset(array2, 'c', 7);
 	//printf("%s, %s", (char *)memset(array, 'b', 5), (char*)ft_memset(array2, 'c', 5));
 
-	test_bzero();
+	test_memcpy();
 	return 0;
 }

@@ -131,6 +131,30 @@ void test_atoi(void)
 	printf("%i \n", ft_atoi("-276447232356363"));
 	printf("%i \n", atoi("-276447232356363"));
 }
+
+void test_strdup(void)
+{
+	char *str = "String";
+
+	printf("%s \n", ft_strdup(str));
+	printf("%s", strdup(str));
+
+}
+
+void test_strjoin(void)
+{
+	printf("%s", ft_strjoin("frog", "dog"));
+}
+
+void test_substr(void)
+{
+	printf("%s", ft_substr("boring", 3, 3));
+}
+
+void test_strtrim(void)
+{
+	printf("%s", ft_strtrim("abababababacsbabasbasbasbbsababababc", "abc"));
+}
 int main(int argc, char const *argv[])
 {
 	//printf("%d", ft_isalnum('3')); 
@@ -147,6 +171,7 @@ int main(int argc, char const *argv[])
 	//printf("%s, %s", (char *)memset(array, 'b', 5), (char*)ft_memset(array2, 'c', 5));
 
 	//test_strlcat();
-	test_atoi();
+	test_strtrim();
+	//test_substr();
 	return 0;
 }

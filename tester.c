@@ -83,6 +83,33 @@ void test_strlcat(void)
 	
 }
 
+void test_strrchr(void)
+{
+	printf("%s \n", ft_strrchr("Google", 'd'));
+	printf("%s \n", strrchr("Google", 'd'));
+
+	printf("%s \n", ft_strchr("Google", 'd'));
+	printf("%s \n", strchr("Google", 'd'));
+	
+
+}
+
+
+void test_strncmp(void)
+{
+	printf("%i \n", strncmp("dozg", "aaa", 3));
+	printf("%i \n", ft_strncmp("dozg", "aaa", 3));
+}
+
+void test_memchr(void)
+{
+	char buf[20] = "Hello, World!";
+
+	printf("%s \n", (char *)ft_memchr(buf, 'g', 0));
+	printf("%s \n", (char *)memchr(buf, 'g', 0));
+
+}
+
 int main(int argc, char const *argv[])
 {
 	//printf("%d", ft_isalnum('3')); 
@@ -99,6 +126,6 @@ int main(int argc, char const *argv[])
 	//printf("%s, %s", (char *)memset(array, 'b', 5), (char*)ft_memset(array2, 'c', 5));
 
 	//test_strlcat();
-	printf("%c  %c", ft_toupper('7'), ft_tolower('7'));
+	test_memchr();
 	return 0;
 }

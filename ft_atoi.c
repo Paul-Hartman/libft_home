@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 13:14:16 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/18 13:35:44 by phartman         ###   ########.fr       */
+/*   Created: 2024/04/18 14:07:02 by phartman          #+#    #+#             */
+/*   Updated: 2024/04/18 14:41:15 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int ft_atoi(const char *nptr)
 {
 	size_t i;
-	unsigned char *mem1;
-	unsigned char *mem2;
+	int sign;
+	int result;
 
-	
-	mem1 = (unsigned char*)s1;
-	mem2 = (unsigned char*)s2;
 	i = 0;
-	if(n == 0)
-		return (0);
-	while(i < n && mem1[i] == mem2[i])
+	sign = 1;
+	result = 0;
+	while(*nptr == ' ')
+		nptr++;
+	if(*nptr == '-')
+	{
+		sign = -1;
+		nptr++;
+	}
+		
+	while(nptr[i])
+	{
+		if((nptr[i] >= '0' && nptr[i] <= '9'))
+				result = result *10  + (nptr[i] - '0');
+		else
+			return(result * sign);
 		i++;
-	return (mem1[i]- mem2[i]);
+	}
+	return(result * sign);
 }
+
+

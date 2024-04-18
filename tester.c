@@ -2,6 +2,7 @@
 #include "libft.h"
 #include <stdio.h>
 #include <stddef.h>
+#include <stdlib.h>
 
 #include <bsd/string.h>
 
@@ -110,6 +111,26 @@ void test_memchr(void)
 
 }
 
+void test_memcmp(void)
+{
+	char buf[20] = "jangle";
+	char buf2[20] = "junngle";
+
+	printf("%i \n", ft_memcmp(buf, buf2, 20));
+	printf("%i \n", memcmp(buf, buf2, 20));
+}
+
+void test_strnstr(void)
+{
+	printf("%s \n", ft_strnstr("billabobog", "", 1));
+	printf("%s \n", strnstr("billabobog", "", 1));
+}
+
+void test_atoi(void)
+{
+	printf("%i \n", ft_atoi("-276447232356363"));
+	printf("%i \n", atoi("-276447232356363"));
+}
 int main(int argc, char const *argv[])
 {
 	//printf("%d", ft_isalnum('3')); 
@@ -126,6 +147,6 @@ int main(int argc, char const *argv[])
 	//printf("%s, %s", (char *)memset(array, 'b', 5), (char*)ft_memset(array2, 'c', 5));
 
 	//test_strlcat();
-	test_memchr();
+	test_atoi();
 	return 0;
 }

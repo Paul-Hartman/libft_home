@@ -155,6 +155,18 @@ void test_strtrim(void)
 {
 	printf("%s", ft_strtrim("abababababacsbabasbasbasbbsababababc", "abc"));
 }
+
+void test_split(void)
+{
+	char **arr = ft_split("fghwrhw", 'r');
+	size_t i= 0;
+	while(arr[i])
+		{
+			printf("%s \n", arr[i]);
+			i++;
+		}
+
+}	
 int main(int argc, char const *argv[])
 {
 	//printf("%d", ft_isalnum('3')); 
@@ -171,7 +183,7 @@ int main(int argc, char const *argv[])
 	//printf("%s, %s", (char *)memset(array, 'b', 5), (char*)ft_memset(array2, 'c', 5));
 
 	//test_strlcat();
-	test_strtrim();
+	test_split();
 	//test_substr();
 	return 0;
 }

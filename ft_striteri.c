@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/19 17:45:40 by phartman          #+#    #+#             */
+/*   Updated: 2024/04/19 17:56:55 by phartman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+
+void one_up(unsigned int index, char *c)
+{
+	*c = *c + index;
+}
+
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	size_t i;
+
+	i = 0;
+	while(s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
+	printf("%s", s);
+}
+
+int main(int argc, char const *argv[])
+{
+	char str[] = "aaaaaa";
+	ft_striteri(str, one_up);
+	return 0;
+}

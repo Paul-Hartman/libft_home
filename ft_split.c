@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 17:35:18 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/19 14:54:52 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:59:51 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,20 +81,20 @@ static void word_allocate(char const *s, char c, char **arr)
 			len++;
 			flag = 1;
 		}
-		if(s[i] == c)
+		if(s[i] == c || !s[i+1])
 		{
 			if(flag)
+			{
 				arr[j] = ft_substr(s, start, len);
-			if(!arr[j])
-				free_all(arr, j);
+				if(!arr[j])
+					free_all(arr, j);
+			}
 			j++;
 			len = 0;
 			flag = 0;
 		}
 		i++;
 	}
-	if (flag)
-		arr[j++] = ft_substr(s, start, len);
 }
 
 char **ft_split(char const *s, char c)

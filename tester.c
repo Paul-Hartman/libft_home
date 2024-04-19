@@ -163,10 +163,17 @@ void test_split(void)
 	while(arr[i])
 		{
 			printf("%s \n", arr[i]);
+			free(arr[i]);
 			i++;
 		}
-
+	
+	free(arr);
 }	
+
+void test_itoa(void)
+{
+	printf("%s", ft_itoa(10));
+}
 int main(int argc, char const *argv[])
 {
 	//printf("%d", ft_isalnum('3')); 
@@ -183,7 +190,7 @@ int main(int argc, char const *argv[])
 	//printf("%s, %s", (char *)memset(array, 'b', 5), (char*)ft_memset(array2, 'c', 5));
 
 	//test_strlcat();
-	test_split();
+	test_itoa();
 	//test_substr();
 	return 0;
 }

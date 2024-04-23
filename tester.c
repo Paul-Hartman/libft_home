@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
-
 #include <bsd/string.h>
 
  //cc -Wall -o test_program tester.c -L. -lft -lbsd
@@ -152,8 +151,9 @@ void test_strnstr(void)
 
 void test_atoi(void)
 {
-	printf("%i \n", ft_atoi("-276447232356363"));
-	printf("%i \n", atoi("-276447232356363"));
+	
+	printf("%i \n", ft_atoi("            1"));
+	printf("%i \n", atoi("            1"));
 }
 
 void test_strdup(void)
@@ -214,7 +214,7 @@ int main(int argc, char const *argv[])
 	//printf("%s, %s", (char *)memset(array, 'b', 5), (char*)ft_memset(array2, 'c', 5));
 
 	//test_strlcat();
-	test_strnstr();
+	test_atoi();
 	//test_substr();
 	return 0;
 }

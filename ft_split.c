@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 17:35:18 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/19 14:59:51 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/23 14:41:22 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,19 @@
 
 
 
-static size_t wordcount(char const *s, char c)
+static size_t	wordcount(char const *s, char c)
 {
-	size_t i;
-	size_t count;
-
-	int flag;
+	size_t	i;
+	size_t	count;
+	int		flag;
 
 	flag = 0;
 	count = 0;
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] == c)
-		{	
+		if (s[i] == c)
+		{
 			if (flag)
 				count++;
 			flag = 0;
@@ -37,14 +36,14 @@ static size_t wordcount(char const *s, char c)
 			flag = 1;
 		i++;
 	}
-	if(flag == 1)
+	if (flag == 1)
 		count++;
-	return(count);
+	return (count);
 }
 
-static void free_all(char **arr, unsigned int count)
+static void	free_all(char **arr, unsigned int count)
 {
-	if(arr)
+	if (arr)
 	{
 		while (count > 0)
 		{
@@ -60,33 +59,33 @@ static void free_all(char **arr, unsigned int count)
 	}
 }
 
-static void word_allocate(char const *s, char c, char **arr)
+static void	word_allocate(char const *s, char c, char **arr)
 {
-	size_t len;
-	unsigned int start;
-	unsigned int i;
-	unsigned int j;
-	int flag;
+	size_t			len;
+	unsigned int	start;
+	unsigned int	i;
+	unsigned int	j;
+	int				flag;
 
 	flag = 0;
 	j = 0;
 	len = 0;
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] != c)
+		if (s[i] != c)
 		{
-			if(!flag)
+			if (!flag)
 				start = i;
 			len++;
 			flag = 1;
 		}
-		if(s[i] == c || !s[i+1])
+		if (s[i] == c || !s[i + 1])
 		{
-			if(flag)
+			if (flag)
 			{
 				arr[j] = ft_substr(s, start, len);
-				if(!arr[j])
+				if (!arr[j])
 					free_all(arr, j);
 			}
 			j++;
@@ -97,16 +96,16 @@ static void word_allocate(char const *s, char c, char **arr)
 	}
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	size_t wc;
-	char **arr;
+	size_t	wc;
+	char	**arr;
 
-	wc = wordcount(s,c);
+	wc = wordcount(s, c);
 	arr = calloc(wc + 1, sizeof(char *));
-	if(!arr)
+	if (!arr)
 		return (NULL);
 	word_allocate(s, c, arr);
-	return(arr);
+	return (arr);
 }
 

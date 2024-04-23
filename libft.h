@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:27:32 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/19 18:03:52 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:20:43 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <string.h>
 #include <stddef.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include <unistd.h>
 int ft_isalpha(int c);
 int ft_isdigit(int c);
 int ft_isalnum(int c);

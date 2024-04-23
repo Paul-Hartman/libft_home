@@ -48,6 +48,11 @@ void test_memcpy(void)
 	printf("%s \n", (char *)memcpy(dest, src, sizeof(dest)));
 }
 
+void test_memchr(void)
+{
+	
+}
+
 void test_strlcpy(void)
 {
 	

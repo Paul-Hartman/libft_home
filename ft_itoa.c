@@ -6,87 +6,62 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 13:44:43 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/19 17:19:00 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/23 14:24:24 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-
-
-static size_t find_len(int n)
+static int	find_len(int n)
 {
-	size_t len;
+	int	len;
+
 	len = 0;
-	
-	while (n >= 10)
-	{
-		n /= 10;
+	if (n < 0)
 		len++;
-	}
-	len++;
-	return len;
-}
-
-static int pow_10(int len)
-{
-	int result;
-
-	result = 1;
-	while(len > 1)
+	while (n)
 	{
-		result = result * 10;
-		len--;
+		len++;
+		n /= 10;
 	}
-	return (result);
+	return (len);
 }
 
-static char *pop_left_digit(int n, int len)
+static int	is_neg(int n, unsigned int *num)
 {
-	char *str;
-	str = malloc(2);
-	if(n == 0)
-		str[0] = '0';
+	if (n < 0)
+	{
+		return (1);
+		*num = -n;
+	}
 	else
-		str[0] = (n / pow_10(len)) + '0';
-	str[1] = '\0';
-	
-	//printf("%i \n", n % pow_10(len));
-	return(str);
+	{
+		*num = n;
+		return (0);
+	}
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	size_t len;
-	char *str;
-	int neg;
+	int				len;
+	char			*str;
+	int				neg;
+	unsigned int	num;
 
-	neg = 0;
-	if(n == -__INT_MAX__)
-	{
-		str = "-2147483648";
-		return (str);
-	}
-	if(n < 0)
-	{
-		n = -n;
-		neg = 1;
-	}
 	len = find_len(n);
-	str = malloc((len + neg) * sizeof(char));
-	if(!str)
+	str = malloc((len + 1) * sizeof(char));
+	len--;
+	if (!str)
 		return (NULL);
-	if(neg)
-		ft_strlcat(str, "-", sizeof(str));
-	while(len > 0)
+	neg = is_neg(n, &num);
+	while (len >= 0)
 	{
-		ft_strlcat(str, pop_left_digit(n, len), sizeof(str));
-		n = n % pow_10(len);
-		len--;
+		str[len--] = (num % 10) + '0';
+		num /= 10;
 	}
+	if (neg)
+		str[0] = '-';
+	else if (n == 0)
+		str[0] = '0';
 	return (str);
 }
-
-
-

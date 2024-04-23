@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:45:40 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/19 17:56:55 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:17:28 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,4 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 		f(i, &s[i]);
 		i++;
 	}
-	printf("%s", s);
-}
-
-int main(int argc, char const *argv[])
-{
-	char str[] = "aaaaaa";
-	ft_striteri(str, one_up);
-	return 0;
 }

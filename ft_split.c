@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 17:35:18 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/23 15:20:33 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:14:53 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,10 +109,5 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-int main(int argc, char const *argv[])
-{
-	/* code */
-	return 0;
-}
 
 

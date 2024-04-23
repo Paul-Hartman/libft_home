@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:27:32 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/23 13:20:43 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:17:38 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 int ft_isalpha(int c);
 int ft_isdigit(int c);
 int ft_isalnum(int c);
@@ -52,6 +53,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*));
 void ft_putchar_fd(char c, int fd);
 void ft_putstr_fd(char *s, int fd);
 void ft_putendl_fd(char *s, int fd);
+void ft_putnbr_fd(int n, int fd);
 
 
 #endif /*LIBFT_H*/

@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:59:00 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/18 13:12:51 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:45:04 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 	mem = (unsigned char*)s;
 	while(i < n)
 	{
-		if (mem[i] == c)
+		if (mem[i] == (unsigned char)c)
 		{
 			return (&mem[i]);
 		}

@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 13:44:43 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/23 14:24:24 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:05:23 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static int	find_len(int n)
 {
 	int	len;
 
+	if (n == 0)
+		return (1);
 	len = 0;
 	if (n < 0)
 		len++;
@@ -31,8 +33,8 @@ static int	is_neg(int n, unsigned int *num)
 {
 	if (n < 0)
 	{
-		return (1);
 		*num = -n;
+		return (1);
 	}
 	else
 	{
@@ -49,7 +51,7 @@ char	*ft_itoa(int n)
 	unsigned int	num;
 
 	len = find_len(n);
-	str = malloc((len + 1) * sizeof(char));
+	str = ft_calloc(1, (len + 1) * sizeof(char));
 	len--;
 	if (!str)
 		return (NULL);

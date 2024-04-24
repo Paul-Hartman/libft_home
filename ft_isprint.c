@@ -6,13 +6,13 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:26:16 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/17 13:36:24 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:01:26 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	if(c >= 32 && c <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);

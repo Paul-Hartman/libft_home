@@ -6,14 +6,13 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 17:35:18 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/23 16:14:53 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:44:52 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-
-
+#include <stddef.h>
 
 static size_t	wordcount(char const *s, char c)
 {
@@ -59,40 +58,45 @@ static void	free_all(char **arr, unsigned int count)
 	}
 }
 
-static void	word_allocate(char const *s, char c, char **arr)
+static int	word_len(char *temp, char c)
 {
-	size_t			len;
-	unsigned int	start;
-	unsigned int	i;
-	unsigned int	j;
-	int				flag;
+	size_t	i;
+	size_t	len;
 
-	flag = 0;
-	j = 0;
 	len = 0;
 	i = 0;
-	while (s[i])
+	while (temp[i] != c && temp[i])
 	{
-		if (s[i] != c)
+		len++;
+		i++;
+	}
+	return (len);
+}
+
+static void	word_allocate(char const *s, char c, char **arr)
+{
+	unsigned int	j;
+	int				flag;
+	char			*temp;
+
+	temp = (char *)s;
+	flag = 0;
+	j = 0;
+	while (*temp)
+	{
+		if (*temp != c && !flag)
 		{
-			if (!flag)
-				start = i;
-			len++;
+			arr[j++] = ft_substr(temp, 0, word_len(temp, c));
+			if (!arr[j - 1])
+			{
+				free_all(arr, j - 1);
+				return ;
+			}
 			flag = 1;
 		}
-		if (s[i] == c || !s[i + 1])
-		{
-			if (flag)
-			{
-				arr[j] = ft_substr(s, start, len);
-				if (!arr[j])
-					free_all(arr, j);
-			}
-			j++;
-			len = 0;
+		else if (*temp == c)
 			flag = 0;
-		}
-		i++;
+		temp++;
 	}
 }
 
@@ -108,6 +112,3 @@ char	**ft_split(char const *s, char c)
 	word_allocate(s, c, arr);
 	return (arr);
 }
-
-
-

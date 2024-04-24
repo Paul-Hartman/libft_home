@@ -6,15 +6,15 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:33:19 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/17 14:39:00 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:57:37 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	t_bzero(void *s, size_t n)
 {
-	unsigned char *mem;
+	unsigned char	*mem;
 
 	mem = s;
 	while (n--)

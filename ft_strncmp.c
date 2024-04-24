@@ -6,12 +6,11 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:32:52 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/23 17:33:59 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:02:30 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -27,5 +26,4 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	return ((s1[i] > s2[i]) - (s1[i] < s2[i]));
-
 }

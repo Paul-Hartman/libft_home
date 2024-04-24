@@ -167,7 +167,8 @@ void test_strdup(void)
 
 void test_strjoin(void)
 {
-	printf("%s", ft_strjoin("frog", "dog"));
+	printf("%s", ft_strjoin("tripouille", "42"));
+	
 }
 
 void test_substr(void)
@@ -182,7 +183,7 @@ void test_strtrim(void)
 
 void test_split(void)
 {
-	char **arr = ft_split("word a word a word a worda", 'a');
+	char **arr = ft_split("abracadabra", 'a');
 	size_t i= 0;
 	while(arr[i])
 		{
@@ -196,7 +197,13 @@ void test_split(void)
 
 void test_itoa(void)
 {
-	printf("%s", ft_itoa(10));
+	printf("%s \n", ft_itoa(0));
+	printf("%i", 0);
+}
+
+void test_putnbr(void)
+{
+	ft_putnbr_fd(10, STDOUT_FILENO);
 }
 int main(int argc, char const *argv[])
 {
@@ -214,7 +221,7 @@ int main(int argc, char const *argv[])
 	//printf("%s, %s", (char *)memset(array, 'b', 5), (char*)ft_memset(array2, 'c', 5));
 
 	//test_strlcat();
-	test_atoi();
+	test_split();
 	//test_substr();
 	return 0;
 }

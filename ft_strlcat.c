@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 18:32:56 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/23 18:47:24 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:47:44 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
-	
-	if(dst_len < size)
+	if (dst_len < size)
 	{
 		i = dst_len;
 		j = 0;
@@ -36,6 +35,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	if (size <= dst_len)
 		return (src_len + size);
-		
 	return (dst_len + src_len);
 }

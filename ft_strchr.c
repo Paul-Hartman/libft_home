@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 19:39:41 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/23 17:10:38 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:03:06 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	unsigned char uc;
-	uc = c;
+	size_t			i;
+	unsigned char	uc;
 
+	uc = c;
 	i = 0;
 	while (s[i])
 	{
@@ -27,6 +27,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (uc == 0)
 		return ((char *)&s[i]);
-
 	return (NULL);
 }

@@ -6,14 +6,14 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:15:24 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/17 13:24:48 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:04:01 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	if(c >= 0 && c <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
-	else 
+	else
 		return (0);
 }

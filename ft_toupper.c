@@ -6,15 +6,14 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 19:30:25 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/17 19:36:41 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:03:44 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c -= 32);
-	else 
+	else
 		return (c);
 }

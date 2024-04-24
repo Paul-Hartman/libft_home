@@ -6,24 +6,18 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:45:40 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/23 13:17:28 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:54:38 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void one_up(unsigned int index, char *c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	*c = *c + index;
-}
-
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		f(i, &s[i]);
 		i++;

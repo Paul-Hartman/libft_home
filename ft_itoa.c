@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 13:44:43 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/24 14:05:23 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:05:57 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ char	*ft_itoa(int n)
 
 	len = find_len(n);
 	str = ft_calloc(1, (len + 1) * sizeof(char));
-	len--;
 	if (!str)
 		return (NULL);
+	len--;
 	neg = is_neg(n, &num);
 	while (len >= 0)
 	{

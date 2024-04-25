@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:07:02 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/24 14:51:02 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:21:35 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (*nptr == ' ' || *nptr == '\0' || (*nptr >= 9 && *nptr <= 13))
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{

@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 17:35:18 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/25 14:10:31 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:49:13 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	wc = wordcount(s, c);
-	arr = calloc(wc + 1, sizeof(char *));
+	arr = ft_calloc(wc + 1, sizeof(char *));
 	if (!arr)
 		return (NULL);
 	word_allocate(s, c, arr);

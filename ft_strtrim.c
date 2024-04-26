@@ -6,7 +6,7 @@
 /*   By: phartman <phartman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:49:38 by phartman          #+#    #+#             */
-/*   Updated: 2024/04/24 14:49:14 by phartman         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:12:54 by phartman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
+	if (!s1)
+		return (NULL);
 	end = ft_strlen(s1) - 1;
 	start = 0;
 	while (s1[start] && is_in(s1[start], set))
